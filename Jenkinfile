@@ -24,7 +24,6 @@ pipeline {
                     sh 'docker build -t $DOCKER_IMAGE .'
             }   
         }
-    }
 
         stage('Push to Docker Hub') {
             steps {
@@ -49,7 +48,6 @@ pipeline {
             }
         }
 
-
         stage('Deploy') {
             steps {
                 script {
@@ -68,3 +66,4 @@ pipeline {
             sh 'docker logout'
         }
     }
+}
